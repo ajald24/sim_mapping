@@ -17,7 +17,7 @@ if uploaded_file is not None:
     df_jis = pd.read_csv(uploaded_file, encoding='cp932')
     jis_col = st.selectbox('対象列選択', df_jis.columns)
     jis_key = st.selectbox('キー選択', df_jis.columns)
-    if jis_col is not None:
+    if jis_col != jis_key:
         
         # GiNZAの日本語モデルをロード
         nlp = spacy.load("ja_ginza")
