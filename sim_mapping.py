@@ -82,7 +82,7 @@ if uploaded_file is not None:
                     best_match_index = no
             # dict_temp = {'Index':[best_match_index],'内容':[best_match_jis],'類似度':[f'{max_similarity:.4f}']}
             # df_output = pd.DataFrame(dict_temp).set_index(['Index'],drop=True)
-            df_output = df_jis.loc[df_jis[jis_key]=best_match_index,[jis_key,jis_col]]
+            df_output = df_jis.loc[df_jis[jis_key]==best_match_index,[jis_key,jis_col]]
             st.table(df_output)
         
         if model == 'BERT':
@@ -151,5 +151,5 @@ if uploaded_file is not None:
             
             # dict_temp = {'Index':[best_match_index],'内容':[best_match_jis],'類似度':[f'{max_similarity[0]:.4f}']}
             # df_output = pd.DataFrame(dict_temp).set_index(['Index'],drop=True)
-            df_output = df_jis.loc[df_jis[jis_key]=best_match_index,[jis_key,jis_col]]
+            df_output = df_jis.loc[df_jis[jis_key]==best_match_index,[jis_key,jis_col]]
             st.table(df_output)
