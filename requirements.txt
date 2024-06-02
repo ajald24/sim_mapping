@@ -2,12 +2,12 @@ Cython
 spacy==3.5.0
 pandas
 streamlit
-torch==2.3.0  # 利用可能な最新バージョン
+torch==2.3.0
 numpy
 transformers==4.6.1
 tqdm
-fugashi==1.1.2  # 最新の安定版バージョンを使用
+fugashi==1.1.2
 ipadic==1.0.0
-ginza==5.1.1
+ginza==5.0.4  # 互換性のあるバージョン
 ja_ginza
 pydantic==1.8.2
