@@ -1,8 +1,8 @@
 Cython
-spacy==3.5.0  # 最新の安定版を使用
+spacy==3.5.0
 pandas
 streamlit
-torch==1.8.0
+torch==2.3.0  # 利用可能な最新バージョン
 numpy
 transformers==4.6.1
 tqdm
