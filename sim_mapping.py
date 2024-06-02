@@ -30,6 +30,11 @@ if uploaded_file is not None:
             text = re.sub(r'^.\）|^.\)|[0-9].[0-9]|[0-9]月', '', text)
             text = re.sub(r',|，|、|。|「|」|『|』|\（|\）|\(|\)|：|:|＝|=|／|/|～|~|・', '', text)
             text = text.upper()
+            text = text.replace(",", "")
+            text = text.replace("\nb）", "")
+            text = text.replace("注記", "")
+            text = text.replace("例えば", "")
+            text = text.replace("その", "")
             text = re.sub(r'\d+', '', text)
             return text
         
