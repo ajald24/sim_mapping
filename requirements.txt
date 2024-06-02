@@ -1,4 +1,4 @@
-spacy
+spacy==3.0.6
 pandas
 streamlit
 torch
@@ -9,3 +9,4 @@ fugashi
 ipadic
 ginza==5.1.1
 ja_ginza
+pydantic==1.8.2
