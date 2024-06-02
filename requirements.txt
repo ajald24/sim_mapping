@@ -6,7 +6,7 @@ torch==2.3.0  # 利用可能な最新バージョン
 numpy
 transformers==4.6.1
 tqdm
-fugashi==1.0.5
+fugashi==1.1.2  # 最新の安定版バージョンを使用
 ipadic==1.0.0
 ginza==5.1.1
 ja_ginza
