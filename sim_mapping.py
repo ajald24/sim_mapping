@@ -111,7 +111,7 @@ if uploaded_file is not None:
             best_match_index = ''
             
             for jis_vector, jis_sent, index in zip(jis_vectors, word_list, no_list):
-                if isinstance(jis_vector.vector, np.ndarray) and jis_vector.vector.size > 0 and isinstance(company_vector.vector, np.ndarray) and company_vector.vector.size > 0:
+                if jis_vector.size>0 and company_vector.size > 0:
                     similarity = cosine_sim(jis_vector, company_vector)
                 else:
                     similarity = 0
