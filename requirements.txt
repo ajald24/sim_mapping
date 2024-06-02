@@ -1,4 +1,5 @@
-spacy==3.0.6
+Cython
+spacy==3.5.0  # 最新の安定版を使用
 pandas
 streamlit
 torch==1.8.0
