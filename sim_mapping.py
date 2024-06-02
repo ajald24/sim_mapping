@@ -45,7 +45,10 @@ if uploaded_file is not None:
             
             def calculate_similarity(doc_company, jis_text):
                 doc_jis = nlp(jis_text)
-                score = doc_company.similarity(doc_jis)
+                if not doc_company.has_vector or not doc_jis.has_vector:
+                    score = 0
+                else:
+                    score = doc_company.similarity(doc_jis)
                 return score
             
             max_similarity = 0
@@ -108,7 +111,10 @@ if uploaded_file is not None:
             best_match_index = ''
             
             for jis_vector, jis_sent, index in zip(jis_vectors, word_list, no_list):
-                similarity = cosine_sim(jis_vector, company_vector)
+                if not jis_vector.has_vector or not company_vector.has_vector:
+                    similarity = 0
+                else:
+                    similarity = cosine_sim(jis_vector, company_vector)
                 if similarity > max_similarity:
                     max_similarity = similarity
                     best_match_jis = jis_sent
