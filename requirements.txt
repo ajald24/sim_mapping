@@ -1,13 +1,12 @@
-Cython
-spacy==3.5.0
+spacy
+re
 pandas
 streamlit
-torch==2.3.0
+torch
 numpy
-transformers==4.6.1
+transformers
 tqdm
-fugashi==1.1.2
-ipadic==1.0.0
-ginza==5.0.4  # 互換性のあるバージョン
+fugashi
+ipadic
+ginza==5.1.1
 ja_ginza
-pydantic==1.8.2
