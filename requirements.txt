@@ -7,5 +7,5 @@ transformers
 tqdm
 fugashi
 ipadic
-ginza==5.1.1
+ginza
 ja_ginza
