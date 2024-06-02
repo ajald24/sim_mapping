@@ -54,7 +54,8 @@ if uploaded_file is not None:
                     max_similarity = score
                     best_match_jis = jis_text
                     best_match_index = no
-            
+
+            st.text(f'類似度：{max_similarity:.4f}')
             df_output = df_jis.loc[df_jis[jis_key] == best_match_index, [jis_key, jis_col]]
             st.table(df_output)
         
@@ -108,6 +109,7 @@ if uploaded_file is not None:
                     max_similarity = similarity
                     best_match_jis = jis_sent
                     best_match_index = index
-            
+
+            st.text(f'類似度：{max_similarity[0]:.4f}')
             df_output = df_jis.loc[df_jis[jis_key] == best_match_index, [jis_key, jis_col]]
             st.table(df_output)
