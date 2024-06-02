@@ -31,7 +31,6 @@ if uploaded_file is not None:
             text = re.sub(r',|，|、|。|「|」|『|』|\（|\）|\(|\)|：|:|＝|=|／|/|～|~|・', '', text)
             text = text.upper()
             text = text.replace(",", "")
-            text = text.replace("\nb）", "")
             text = text.replace("注記", "")
             text = text.replace("例えば", "")
             text = text.replace("その", "")
