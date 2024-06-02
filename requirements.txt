@@ -9,4 +9,3 @@ fugashi
 ipadic
 ginza==5.1.1
 ja_ginza
-neologdn==0.3.2
