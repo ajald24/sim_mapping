@@ -14,7 +14,7 @@ uploaded_file = st.file_uploader('CSVを選択', type='csv')
 model = st.selectbox('モデルを選択してください',['Doc2Vec','BERT'])
 
 if uploaded_file is not None:
-    df_jis = pd.read_csv(uploaded_file, encoding='cp932')
+    df_jis = pd.read_csv(uploaded_file, encoding='cp932', dtype='object')
     jis_col = st.selectbox('対象列選択', df_jis.columns)
     jis_key = st.selectbox('キー選択', df_jis.columns)
     if jis_col != jis_key:
