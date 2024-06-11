@@ -8,7 +8,7 @@ from transformers import BertJapaneseTokenizer, BertModel
 from tqdm import tqdm
 import fugashi
 
-st.title('規程マッピングアプリ')
+st.title('類似文章検索アプリ')
 
 uploaded_file = st.file_uploader('CSVを選択', type='csv')
 model = st.selectbox('モデルを選択してください',['Doc2Vec','BERT'])
@@ -40,7 +40,7 @@ if uploaded_file is not None:
         if model == 'Doc2Vec':
             word_list = list(df_jis[jis_col].astype('str').apply(cleansing))
             no_list = list(df_jis[jis_key])
-            company_security_policy_text = st.text_area('規程を入力してください',height=150)
+            company_security_policy_text = st.text_area('検索したい文章を入力してください',height=150)
             doc_company = nlp(cleansing(company_security_policy_text))
             
             def calculate_similarity(doc_company, jis_text):
