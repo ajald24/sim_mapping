@@ -40,7 +40,7 @@ if uploaded_file is not None:
         if model == 'Doc2Vec':
             word_list = list(df_jis[jis_col].astype('str').apply(cleansing))
             no_list = list(df_jis[jis_key])
-            company_security_policy_text = st.text_area('規程を入力してください')
+            company_security_policy_text = st.text_area('規程を入力してください',height=150)
             doc_company = nlp(cleansing(company_security_policy_text))
             
             def calculate_similarity(doc_company, jis_text):
