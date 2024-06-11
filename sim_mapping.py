@@ -51,20 +51,28 @@ if uploaded_file is not None:
                     score = doc_company.similarity(doc_jis)
                 return score
             
-            max_similarity = 0
-            best_match_jis = ''
-            best_match_index = ''
+            # max_similarity = 0
+            # best_match_jis = ''
+            # best_match_index = ''
             
+            # for jis_text, no in zip(word_list, no_list):
+            #     score = calculate_similarity(doc_company, jis_text)
+            #     if score > max_similarity:
+            #         max_similarity = score
+            #         best_match_jis = jis_text
+            #         best_match_index = no
+
+            # st.text(f'類似度：{max_similarity:.4f}')
+            # df_output = df_jis.loc[df_jis[jis_key] == best_match_index, [jis_key, jis_col]]
+
+            df_output = df_jis.copy()
+            df_output['類似度']=0
             for jis_text, no in zip(word_list, no_list):
                 score = calculate_similarity(doc_company, jis_text)
-                if score > max_similarity:
-                    max_similarity = score
-                    best_match_jis = jis_text
-                    best_match_index = no
-
-            st.text(f'類似度：{max_similarity:.4f}')
-            df_output = df_jis.loc[df_jis[jis_key] == best_match_index, [jis_key, jis_col]]
-            st.table(df_output)
+                df_output.loc[df_jis[jis_key] == no,['類似度']]=score
+            df_output = df_output.sort_values(by=['類似度'],ascending=False)
+            rows = st.number_input('表示行数を入力してください',value=3)
+            st.table(df_output.head(rows))
         
         if model == 'BERT':
             tokenizer = BertJapaneseTokenizer.from_pretrained('cl-tohoku/bert-base-japanese')
